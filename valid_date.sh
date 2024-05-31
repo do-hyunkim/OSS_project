@@ -16,29 +16,18 @@ input_month=$(echo "$input_month" | awk '{print toupper(substr($0,1,1)) tolower(
 
 # 월 변환
 case $input_month in
-    jan|1) month="Jan" ;;
-    january) month="Jan" ;;
-    feb|2) month="Feb" ;;
-    february) month="Feb" ;;
-    mar|3) month="Mar" ;;
-    march) month="Mar" ;;
-    apr|4) month="Apr" ;;
-    april) month="Apr" ;;
+    jan|1|january) month="Jan" ;;
+    feb|2|february) month="Feb" ;;
+    mar|3|march) month="Mar" ;;
+    apr|4|april) month="Apr" ;;
     may|5) month="May" ;;
-    jun|6) month="Jun" ;;
-    june) month="Jun" ;;
-    jul|7) month="Jul" ;;
-    july) month="Jul" ;;
-    aug|8) month="Aug" ;;
-    august) month="Aug" ;;
-    sep|9) month="Sep" ;;
-    september) month="Sep" ;;
-    oct|10) month="Oct" ;;
-    october) month="Oct" ;;
-    nov|11) month="Nov" ;;
-    november) month="Nov" ;;
-    dec|12) month="Dec" ;;
-    december) month="Dec" ;;
+    jun|6|june) month="Jun" ;;
+    jul|7|july) month="Jul" ;;
+    aug|8|august) month="Aug" ;;
+    sep|9|september) month="Sep" ;;
+    oct|10|october) month="Oct" ;;
+    nov|11|november) month="Nov" ;;
+    dec|12|december) month="Dec" ;;
     *) 
         echo "$input_month is not a valid month"
         exit 1
