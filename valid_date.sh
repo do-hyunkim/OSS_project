@@ -6,7 +6,7 @@ if [ $# -ne 3 ]; then
     exit 1
 fi
 
-# 명령줄 인수 할당
+# 인수 설정
 input_month=$1
 input_day=$2
 input_year=$3
@@ -29,7 +29,7 @@ case $input_month in
     nov|11|november) month="Nov" ;;
     dec|12|december) month="Dec" ;;
     *) 
-        echo "$input_month is not a valid month"
+         echo "$1 $2 $3 는 유효하지 않습니다."
         exit 1
         ;;
 esac
@@ -49,7 +49,7 @@ else
     leap_year=0
 fi
 
-# 각 달의 일수 설정
+# 모든 달 일수 설정
 if [ "$month" = "Jan" ] || [ "$month" = "Mar" ] || [ "$month" = "May" ] || [ "$month" = "Jul" ] || [ "$month" = "Aug" ] || [ "$month" = "Oct" ] || [ "$month" = "Dec" ]; then
     max_day=31
 elif [ "$month" = "Apr" ] || [ "$month" = "Jun" ] || [ "$month" = "Sep" ] || [ "$month" = "Nov" ]; then
@@ -62,11 +62,11 @@ elif [ "$month" = "Feb" ]; then
     fi
 fi
 
-# 날짜 유효성 확인
+# 날짜 확인
 if (( input_day < 1 || input_day > max_day )); then
     echo "$month $input_day $input_year는 유효하지 않습니다."
     exit 1
 fi
 
-# 유효한 날짜 출력
+# 날짜 출력
 echo "$month $input_day $input_year"
